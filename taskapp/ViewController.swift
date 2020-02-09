@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    
+    //
     // MARK: UITableViewDataSourceプロトコルのメソッド
     //データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
