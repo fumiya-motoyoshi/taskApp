@@ -88,33 +88,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTI-aO-Vxc">
+                                <rect key="frame" x="10" y="169" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHM-ah-8sn">
                                 <rect key="frame" x="10" y="129" width="394" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDd-CF-MIK">
+                                <rect key="frame" x="10" y="200" width="394" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-zx-e9t">
-                                <rect key="frame" x="10" y="169" width="394" height="21"/>
+                                <rect key="frame" x="10" y="240" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-Jr-ajl">
-                                <rect key="frame" x="10" y="200" width="394" height="120"/>
+                                <rect key="frame" x="10" y="271" width="394" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="FB0-fB-gxg"/>
+                                    <constraint firstAttribute="height" constant="120" id="55N-6r-83Z"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-Eo-5cc">
-                                <rect key="frame" x="0.0" y="330" width="414" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="H5J-AT-quB"/>
-                                </constraints>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-Eo-5cc">
+                                <rect key="frame" x="0.0" y="486" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="602900049.70088696">
                                     <!--2020-02-09 00:14:09 +0000-->
                                 </date>
@@ -122,25 +132,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jkd-Eo-5cc" firstAttribute="trailing" secondItem="BZ7-Sw-5R4" secondAttribute="trailing" id="60W-nS-uBp"/>
-                            <constraint firstItem="k84-EH-0AR" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="7Cv-Ho-5xM"/>
-                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="GHM-ah-8sn" secondAttribute="trailing" constant="10" id="84j-8d-Yx7"/>
-                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="k84-EH-0AR" secondAttribute="trailing" constant="10" id="87U-La-CeM"/>
-                            <constraint firstItem="dcc-Jr-ajl" firstAttribute="top" secondItem="SRg-zx-e9t" secondAttribute="bottom" constant="10" id="9QK-47-eIY"/>
-                            <constraint firstItem="GHM-ah-8sn" firstAttribute="top" secondItem="k84-EH-0AR" secondAttribute="bottom" constant="10" id="9kE-5b-Rf1"/>
-                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="dcc-Jr-ajl" secondAttribute="trailing" constant="10" id="HYy-w9-n6A"/>
-                            <constraint firstItem="k84-EH-0AR" firstAttribute="top" secondItem="BZ7-Sw-5R4" secondAttribute="top" constant="10" id="R4i-2X-bLD"/>
-                            <constraint firstItem="SRg-zx-e9t" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="V5J-KU-9uu"/>
-                            <constraint firstItem="GHM-ah-8sn" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="aiB-Ut-mzO"/>
-                            <constraint firstItem="jkd-Eo-5cc" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" id="joA-e6-VZh"/>
-                            <constraint firstItem="SRg-zx-e9t" firstAttribute="top" secondItem="GHM-ah-8sn" secondAttribute="bottom" constant="10" id="p04-NT-UXA"/>
-                            <constraint firstItem="jkd-Eo-5cc" firstAttribute="top" secondItem="dcc-Jr-ajl" secondAttribute="bottom" constant="10" id="p1P-fR-fOp"/>
-                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="SRg-zx-e9t" secondAttribute="trailing" constant="10" id="qDr-XR-VC2"/>
-                            <constraint firstItem="dcc-Jr-ajl" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="ywl-kC-XyA"/>
+                            <constraint firstItem="LDd-CF-MIK" firstAttribute="top" secondItem="CTI-aO-Vxc" secondAttribute="bottom" constant="10" id="0wk-j0-qeZ"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="SRg-zx-e9t" secondAttribute="trailing" constant="10" id="9Ec-b1-irC"/>
+                            <constraint firstItem="k84-EH-0AR" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="CAh-AA-1eg"/>
+                            <constraint firstItem="LDd-CF-MIK" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="DwQ-4D-3nD"/>
+                            <constraint firstItem="GHM-ah-8sn" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="HfO-0J-chn"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="GHM-ah-8sn" secondAttribute="trailing" constant="10" id="I4E-To-ngY"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="dcc-Jr-ajl" secondAttribute="trailing" constant="10" id="LPo-SI-7m6"/>
+                            <constraint firstItem="CTI-aO-Vxc" firstAttribute="top" secondItem="GHM-ah-8sn" secondAttribute="bottom" constant="10" id="TX4-aj-CxY"/>
+                            <constraint firstItem="CTI-aO-Vxc" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="bTB-13-4aq"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="CTI-aO-Vxc" secondAttribute="trailing" constant="10" id="fmb-VE-82C"/>
+                            <constraint firstItem="GHM-ah-8sn" firstAttribute="top" secondItem="k84-EH-0AR" secondAttribute="bottom" constant="10" id="h6Z-ur-50a"/>
+                            <constraint firstItem="SRg-zx-e9t" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="jEu-4F-0i7"/>
+                            <constraint firstItem="dcc-Jr-ajl" firstAttribute="top" secondItem="SRg-zx-e9t" secondAttribute="bottom" constant="10" id="ke9-9P-oPm"/>
+                            <constraint firstItem="SRg-zx-e9t" firstAttribute="top" secondItem="LDd-CF-MIK" secondAttribute="bottom" constant="10" id="krc-U5-1l0"/>
+                            <constraint firstItem="dcc-Jr-ajl" firstAttribute="leading" secondItem="BZ7-Sw-5R4" secondAttribute="leading" constant="10" id="qU4-js-qdt"/>
+                            <constraint firstItem="k84-EH-0AR" firstAttribute="top" secondItem="BZ7-Sw-5R4" secondAttribute="top" constant="10" id="xfG-Dg-Qi1"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="LDd-CF-MIK" secondAttribute="trailing" constant="10" id="xw0-0V-FYx"/>
+                            <constraint firstItem="BZ7-Sw-5R4" firstAttribute="trailing" secondItem="k84-EH-0AR" secondAttribute="trailing" constant="10" id="z54-Ch-4T7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BZ7-Sw-5R4"/>
                     </view>
                     <connections>
+                        <outlet property="categoryTextField" destination="LDd-CF-MIK" id="pDl-eW-qHn"/>
                         <outlet property="contentsTextField" destination="dcc-Jr-ajl" id="jnx-hh-eMG"/>
                         <outlet property="datePicker" destination="jkd-Eo-5cc" id="yGV-sC-mqL"/>
                         <outlet property="titleTextField" destination="GHM-ah-8sn" id="Fse-0i-QN5"/>
