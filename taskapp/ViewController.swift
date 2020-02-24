@@ -10,9 +10,11 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTask: UISearchBar!
+    
     
     // Realmインスタンスを取得する
     let realm = try! Realm()
@@ -22,11 +24,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
     
+    
+    //検索結果の配列
+    var searchResult = [String]() //追加
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        //結果表示用のテーブルビューを作成する。
+        tableView.register(UITableViewCell.self,forCellReuseIdentifier: "TestCell") //追加
         tableView.delegate = self
         tableView.dataSource = self
+        
+        searchTask.delegate = self //追加
+        
+        self.view.addSubview(tableView) //追加
+        
     }
     
     
@@ -42,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+      
         // Cellに値を設定する
         let task = taskArray[indexPath.row]
         cell.textLabel?.text = task.title
@@ -52,9 +68,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
-        
+    
         return cell
     }
+    
+    
+    //検索ボタン押下時の呼び出しメソッド
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //検索文字列を含むデータを検索結果配列に格納する。
+        searchResult = task.category.filter { data in return data.contains(searchTask.text!) }
+        
+        //テーブルを再読み込みする
+        tableView.reloadData()
+    }
+    
     
     // MARK: UITableViewDelegateプロトコルのメソッド
     // 各セルを選択した時に実行されるメソッド
