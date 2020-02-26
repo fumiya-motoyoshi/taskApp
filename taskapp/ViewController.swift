@@ -13,6 +13,7 @@ import UserNotifications
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var searchTask: UISearchBar!
     
     
@@ -40,7 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         searchTask.delegate = self //追加
-        
         self.view.addSubview(tableView) //追加
         
     }
@@ -73,10 +73,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    //検索ボタン押下時の呼び出しメソッド
+    //検索ボタン押下時、検索文字列変更時の呼び出しメソッド
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //検索文字列を含むデータを検索結果配列に格納する。
-        searchResult = task.category.filter { data in return data.contains(searchTask.text!) }
+        //検索文字列を含むデータを検索結果配列に格納する
+        
+        // NSPredicateを使って検索条件を指定します
+        let predicate = NSPredicate(format: "category = %@", searchTask)
+        taskArray = realm.objects(Task.self).filter(predicate)
         
         //テーブルを再読み込みする
         tableView.reloadData()
