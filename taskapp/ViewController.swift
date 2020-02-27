@@ -20,12 +20,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Realmインスタンスを取得する
     let realm = try! Realm()
     
-    // DB内のタスクが格納されるリスト。
+    // DB内のタスクが格納されるリスト
     // 日付近い順\順でソート：降順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
     
-    
+
     //検索結果の配列
     var searchResult = [String]() //追加
     
@@ -34,17 +34,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
         //結果表示用のテーブルビューを作成する。
         tableView.register(UITableViewCell.self,forCellReuseIdentifier: "TestCell") //追加
         tableView.delegate = self
         tableView.dataSource = self
-        
         searchTask.delegate = self //追加
         self.view.addSubview(tableView) //追加
-        
     }
     
+
     
     //
     // MARK: UITableViewDataSourceプロトコルのメソッド
@@ -75,14 +73,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //検索ボタン押下時、検索文字列変更時の呼び出しメソッド
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //検索文字列を含むデータを検索結果配列に格納する
-        
+    
         // NSPredicateを使って検索条件を指定します
-        let predicate = NSPredicate(format: "category = %@", searchTask)
+        let predicate = NSPredicate(format: "category = %@", searchTask.text!)
         taskArray = realm.objects(Task.self).filter(predicate)
         
         //テーブルを再読み込みする
         tableView.reloadData()
+    }
+    
+    
+    //キャンセルボタン押下時に全件表示に戻す
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+       //taskArrayに全件の値を代入する
+        taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+        
+        //テーブルを再読み込みする
+        tableView.reloadData()
+        
     }
     
     

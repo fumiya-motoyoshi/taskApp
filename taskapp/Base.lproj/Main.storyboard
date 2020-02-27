@@ -19,22 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OcI-wF-b2L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" text="" showsCancelButton="YES" id="XUs-p7-aeS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="5Gf-24-NeN"/>
-                                    </constraints>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="BYZ-38-t0r" id="AhW-AG-p7v"/>
-                                    </connections>
-                                </searchBar>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="724" id="WyP-Pd-FXT"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="bfT-lN-iMg" detailTextLabel="RZ8-hP-sSv" style="IBUITableViewCellStyleSubtitle" id="fej-Ue-hV3">
-                                        <rect key="frame" x="0.0" y="78" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fej-Ue-hV3" id="vwB-Kj-acO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -59,13 +51,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="yoa-q1-sZz">
+                                <rect key="frame" x="0.0" y="82" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6ma-q5-1Cv"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HtG-pG-w1A"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qvP-xJ-JpP"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tlF-P5-rA2"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="top" secondItem="yoa-q1-sZz" secondAttribute="bottom" id="Es3-Ye-gJI"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hxd-Cj-dCE"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="trailing" secondItem="yoa-q1-sZz" secondAttribute="trailing" id="PwS-j2-aWL"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="yoa-q1-sZz" secondAttribute="leading" id="YbW-GX-ofh"/>
+                            <constraint firstAttribute="trailing" secondItem="OcI-wF-b2L" secondAttribute="trailing" id="vUn-PA-SB3"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xLX-YK-hcY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -77,8 +75,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="sxm-O0-tcY" id="ngw-GP-58H"/>
-                        <outlet property="searchTask" destination="XUs-p7-aeS" id="xcV-jW-ioF"/>
+                        <outlet property="searchTask" destination="yoa-q1-sZz" id="bVS-aS-Xqt"/>
                         <outlet property="tableView" destination="OcI-wF-b2L" id="uYm-aG-HDQ"/>
                         <segue destination="M8k-BD-4fB" kind="show" identifier="cellSegue" id="xdB-4x-lDm"/>
                     </connections>
@@ -87,7 +84,6 @@
                 <searchDisplayController id="sxm-O0-tcY">
                     <connections>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="O9H-Uy-CxJ"/>
-                        <outlet property="searchBar" destination="XUs-p7-aeS" id="LOP-R2-QAC"/>
                         <outlet property="searchContentsController" destination="BYZ-38-t0r" id="iej-N9-Fyj"/>
                         <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="qRV-6X-sU8"/>
                         <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="2Ms-8z-x1g"/>
@@ -211,6 +207,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pHp-U4-0g8"/>
+        <segue reference="xdB-4x-lDm"/>
     </inferredMetricsTieBreakers>
 </document>
