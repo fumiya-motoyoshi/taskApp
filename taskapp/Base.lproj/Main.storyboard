@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CqJ-Xv-uaB">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,29 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OcI-wF-b2L">
-                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <searchBar contentMode="redraw" text="" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yoa-q1-sZz">
+                                <rect key="frame" x="0.0" y="205" width="414" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="724" id="WyP-Pd-FXT"/>
+                                    <constraint firstAttribute="height" constant="50" id="A3g-GY-dZb"/>
                                 </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OcI-wF-b2L">
+                                <rect key="frame" x="0.0" y="299" width="191" height="1567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="bfT-lN-iMg" detailTextLabel="RZ8-hP-sSv" style="IBUITableViewCellStyleSubtitle" id="fej-Ue-hV3">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fej-Ue-hV3" id="vwB-Kj-acO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfT-lN-iMg">
-                                                    <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RZ8-hP-sSv">
-                                                    <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -51,19 +55,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="yoa-q1-sZz">
-                                <rect key="frame" x="0.0" y="82" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="top" secondItem="yoa-q1-sZz" secondAttribute="bottom" id="Es3-Ye-gJI"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hxd-Cj-dCE"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="trailing" secondItem="yoa-q1-sZz" secondAttribute="trailing" id="PwS-j2-aWL"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="yoa-q1-sZz" secondAttribute="leading" id="YbW-GX-ofh"/>
-                            <constraint firstAttribute="trailing" secondItem="OcI-wF-b2L" secondAttribute="trailing" id="vUn-PA-SB3"/>
-                            <constraint firstItem="OcI-wF-b2L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xLX-YK-hcY"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="top" secondItem="yoa-q1-sZz" secondAttribute="bottom" id="27X-UT-vEY"/>
+                            <constraint firstItem="yoa-q1-sZz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L1I-Ed-bMW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OcI-wF-b2L" secondAttribute="bottom" id="OQI-gN-VnC"/>
+                            <constraint firstItem="yoa-q1-sZz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QPR-Vd-rtd"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qvf-em-Ood"/>
+                            <constraint firstItem="OcI-wF-b2L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hbD-gK-Rmv"/>
+                            <constraint firstItem="yoa-q1-sZz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i0D-fw-OBg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
